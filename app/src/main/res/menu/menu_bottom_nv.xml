@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_main_fragment"
+        android:title="@string/action_main"
+
+        />
+    <item
+        android:id="@+id/action_find_fragment"
+        android:title="@string/action_find"
+
+        />
+    <item
+        android:id="@+id/action_me_fragment"
+        android:title="@string/action_mine"
+
+        />
+
+</menu>
