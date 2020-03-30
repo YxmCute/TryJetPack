@@ -24,6 +24,13 @@
         android:name="com.lij.tryjetpack.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
+        <action
+            android:id="@+id/action_action_me_fragment_to_liveDataActivity"
+            app:destination="@id/liveDataActivity" />
     </fragment>
+    <activity
+        android:id="@+id/liveDataActivity"
+        android:name="com.lij.tryjetpack.livedata.LiveDataActivity"
+        android:label="activity_live_data"
+        tools:layout="@layout/activity_live_data" />
 </navigation>

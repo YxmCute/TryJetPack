@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_second.*
 
 /**
@@ -23,6 +24,9 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         textview_second.text = arguments?.getString("key")
+        button_second.setOnClickListener {
+            findNavController().navigate(R.id.action_action_me_fragment_to_liveDataActivity)
+        }
 
 
     }
