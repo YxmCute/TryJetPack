@@ -17,11 +17,14 @@
         android:name="com.lij.tryjetpack.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_to_me"
+            app:destination="@id/action_me_fragment" />
 
     </fragment>
     <fragment
         android:id="@+id/action_me_fragment"
-        android:name="com.lij.tryjetpack.SecondFragment"
+        android:name="com.lij.tryjetpack.ui.dashboard.DashboardFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
         <action

@@ -9,6 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lij.tryjetpack.R
 import kotlinx.android.synthetic.main.activity_live_data.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.withContext
 
 class LiveDataActivity : AppCompatActivity() {
 
@@ -36,6 +40,7 @@ class LiveDataActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        val f = function("xxx")
         if (resultCode == Activity.RESULT_OK && requestCode == 1024) {
             data?.getStringExtra("word")?.let {
                 val word = Word(count, it)
@@ -44,4 +49,20 @@ class LiveDataActivity : AppCompatActivity() {
             }
         }
     }
+
+    private suspend fun getUrl(url: String) = withContext(Dispatchers.IO) {
+        return@withContext url
+
+    }
+
+    private suspend fun sortList() = withContext(Dispatchers.Default) {}
+
+    private suspend fun fetchTwo() = coroutineScope {
+        val r1 = async { getUrl("xxx") }
+        val r2 = async { getUrl("11111") }
+        val t = r1.await()
+        r2.await()
+    }
+
+    private val function: (String) -> Int = { input -> input.length }
 }

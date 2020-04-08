@@ -19,7 +19,7 @@ class LocationHelper<T : Location>(
     fun enable() {
         isEnable = true
         if (lifecycle.currentState.isAtLeast(Lifecycle.State.CREATED)) {
-            Log.i("timo", "enable")
+            //Log.i("timo", "enable")
         }
 
     }
@@ -40,32 +40,32 @@ class LocationHelper<T : Location>(
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onStart() {
         mListener.invoke("invoke onStart")
-        Log.i("timo", "onStart")
+        // Log.i("timo", "onStart")
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun onPause() {
-        Log.i("timo", "onPause")
+        //  Log.i("timo", "onPause")
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun onStop() {
-        Log.i("timo", "onStop")
+        // Log.i("timo", "onStop")
         merroeListener.invoke(false)
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun onResume() {
-        Log.i("timo", "onResume")
+        // Log.i("timo", "onResume")
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun onDestroy() {
-        Log.i("timo", "onDestroy")
+        // Log.i("timo", "onDestroy")
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
     fun onAny() {
-        Log.i("timo", "onAny")
+        // Log.i("timo", "onAny")
     }
 }

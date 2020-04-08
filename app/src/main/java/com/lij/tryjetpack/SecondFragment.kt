@@ -1,10 +1,12 @@
 package com.lij.tryjetpack
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_second.*
 
@@ -25,8 +27,14 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         textview_second.text = arguments?.getString("key")
         button_second.setOnClickListener {
-            findNavController().navigate(R.id.action_action_me_fragment_to_liveDataActivity)
+            findNavController().navigate(R.id.action_to_me)
         }
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>("key")
+            ?.observe(viewLifecycleOwner, Observer<String> {
+                Log.i("timo", it)
+            })
+
+
 
 
     }

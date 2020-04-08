@@ -20,7 +20,6 @@ abstract class WordRoomDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 {
                     scope.launch {
-
                         val wordDao = database.getWordDao()
                         wordDao.deleteAll()
                         var word = Word(1, word = "hello")

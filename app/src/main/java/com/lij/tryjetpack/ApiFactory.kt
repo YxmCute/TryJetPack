@@ -9,7 +9,6 @@ object ApiFactory {
     fun retrofit(): Retrofit =
         Retrofit.Builder().client(okHttpClient).baseUrl("https://www.wanandroid.com/")
             .addConverterFactory(GsonConverterFactory.create())
-
             .build()
 
     val mainService = retrofit().create(ApiService::class.java)
